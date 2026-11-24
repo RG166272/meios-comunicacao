@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Consulta a CNM Magazine, publicada por estudantes em 2019, sobre sustentabilidade e comunicação.">
+	<title>CNM Magazine JAN2019</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="layout.css">
+	<script src="script.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js" defer></script>
+	<script src="book-reader.js" defer></script>
+</head>
+<body>
+	<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+	<header class="site-header">
+		<a class="logo" href="index.html#inicio"><span class="logo-mark" aria-hidden="true">c.</span>Meios de comunicação</a>
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menu">
+			<span></span><span></span><span></span>
+		</button>
+		<nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+			<a href="index.html#meios">Os meios</a>
+			<a href="index.html#historia">Linha do tempo</a>
+			<a href="index.html#projeto">Sobre o projeto</a>
+			<a class="nav-button" href="index.html#meios">Explorar <span aria-hidden="true">↗</span></a>
+		</nav>
+	</header>
+	<main id="conteudo">
+		<section class="detail-hero section-wrap">
+			<a class="back-link" href="index.html#inicio">← Voltar ao início</a>
+			<p class="eyebrow">Revista digital</p>
+			<h1>Projeto base</h1>
+			<p class="detail-lead">Percorre a CNM Magazine, publicada por estudantes em 2019, sobre sustentabilidade e comunicação.</p>
+		</section>
+		<section class="book-reader-wrap section-wrap" aria-label="Livro digital do projeto base">
+			<div class="book-reader">
+				<div class="book-reader-toolbar">
+					<span><span class="reader-status-dot" aria-hidden="true"></span> CNM Magazine (edição limitada)</span>
+					<div class="book-reader-actions">
+						<span class="fullscreen-error" id="fullscreen-error" role="status" aria-live="polite" hidden></span>
+						<div class="zoom-controls" role="group" aria-label="Controlos de zoom">
+							<button class="book-control zoom-control" id="book-zoom-out" type="button" aria-label="Diminuir zoom" title="Diminuir zoom">−</button>
+							<span class="zoom-level" id="book-zoom-level" aria-live="polite">100%</span>
+							<button class="book-control zoom-control" id="book-zoom-in" type="button" aria-label="Aumentar zoom" title="Aumentar zoom">+</button>
+						</div>
+						<button class="book-control fullscreen-control" id="book-fullscreen" type="button" aria-label="Ativar ecrã inteiro">
+							<svg class="fullscreen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path class="fullscreen-enter" d="M8 3H4a1 1 0 0 0-1 1v4m13-5h4a1 1 0 0 1 1 1v4M21 16v4a1 1 0 0 1-1 1h-4M8 21H4a1 1 0 0 1-1-1v-4"></path>
+								<path class="fullscreen-exit" d="M8 3v5a1 1 0 0 1-1 1H3m13-6v5a1 1 0 0 0 1 1h4m0 7h-5a1 1 0 0 0-1 1v5m-7 0v-5a1 1 0 0 0-1-1H3"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="book-stage is-loading">
+					<div id="book-flip" aria-label="Páginas da CNM Magazine"></div>
+					<p class="book-loading" id="book-loading" role="status">A preparar o livro digital…</p>
+					<p class="book-error" id="book-error" role="alert" hidden>Não foi possível carregar o livro digital. Se abriste o site diretamente como ficheiro, tenta abrir a página através de um servidor Web.</p>
+				</div>
+				<div class="book-controls" aria-label="Controlos do livro">
+					<button class="book-control" id="book-prev" type="button" aria-label="Página anterior" disabled>← Anterior</button>
+					<span class="book-page-count" id="book-page-count" aria-live="polite"></span>
+					<button class="book-control" id="book-next" type="button" aria-label="Página seguinte" disabled>Seguinte →</button>
+				</div>
+			</div>
+		</section>
+		<section class="sponsors-section section-wrap" aria-labelledby="sponsors-title">
+			<div class="sponsors-heading">
+				<p class="eyebrow">Agradecimentos</p>
+				<h2 id="sponsors-title">Os nossos patrocinadores</h2>
+			</div>
+			<div class="sponsor-grid">
+				<div class="sponsor-item">
+					<img src="assets/logos/finieco.svg" alt="Finieco" loading="lazy" decoding="async">
+				</div>
+				<div class="sponsor-item">
+					<img src="assets/logos/rangel.png" alt="Rangel Logistics" loading="lazy" decoding="async">
+				</div>
+				<div class="sponsor-item">
+					<img src="assets/logos/goshare.png" alt="Go Share" loading="lazy" decoding="async">
+				</div>
+				<div class="sponsor-item sponsor-name-only">Gelarte Confeitaria</div>
+				<div class="sponsor-item sponsor-name-only">IBMA</div>
+				<div class="sponsor-item sponsor-name-only">Buril Artes Gráficas</div>
+				<div class="sponsor-item">
+					<img src="assets/logos/tui.png" alt="TUI" loading="lazy" decoding="async">
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="site-footer">
+		<div class="footer-main section-wrap">
+			<div class="footer-about"><a class="logo footer-logo" href="index.html#inicio"><span class="logo-mark">c.</span> conexões</a><p>Um projeto escolar sobre os meios de comunicação e as formas como aproximam o mundo.</p></div>
+			<div class="footer-links">
+				<div><h2>Explore</h2><a href="index.html#meios">Os meios</a><a href="index.html#historia">Linha do tempo</a></div>
+				<div><h2>O projeto</h2><a href="index.html#inicio">Trabalho em grupo</a><a href="index.html#meios">Aprender juntos</a><a href="index.html#projeto">Comunicação</a></div>
+			</div>
+		</div>
+		<div class="footer-bottom section-wrap"><span>© Projeto A+ — Grupo 3</span><span>11.º Ano</span></div>
+	</footer>
+</body>
+</html>

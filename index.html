@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Evolução dos meios de comunicação">
+	<title>Meios de comunicação</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://images.unsplash.com">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="layout.css">
+	<script src="script.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" defer></script>
+	<script src="book-cover.js" defer></script>
+</head>
+<body>
+	<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+	<dialog class="dilemma-dialog" id="dilemma-dialog" aria-labelledby="dilemma-title">
+		<div class="dilemma-shell">
+			<button class="dilemma-close" id="dilemma-close" type="button" aria-label="Fechar dilema">×</button>
+			<div class="dilemma-image">
+				<img src="assets/chinese-room.png" alt="Ilustração do experimento do Quarto Chinês">
+			</div>
+			<div class="dilemma-content">
+				<p class="eyebrow">Dilema sobre inteligência artificial</p>
+				<h2 id="dilemma-title">O Quarto Chinês — John Searle (1980)</h2>
+				<p class="dilemma-question">Será que a Inteligência Artificial compreende verdadeiramente aquilo que comunica ou apenas simula a compreensão humana?</p>
+				<form id="dilemma-form">
+					<fieldset>
+						<legend class="sr-only">Escolha uma possível resposta</legend>
+						<label class="dilemma-option">
+							<input type="radio" name="dilemma-answer" value="A">
+							<span class="dilemma-option-copy"><strong>A)</strong> Sim. Se a IA consegue comunicar, interpretar informações e responder corretamente, significa que compreende aquilo que diz.<span class="dilemma-percent" data-answer-percent="A" hidden></span><span class="dilemma-bar" data-answer-bar="A" hidden></span></span>
+						</label>
+						<label class="dilemma-option">
+							<input type="radio" name="dilemma-answer" value="B">
+							<span class="dilemma-option-copy"><strong>B)</strong> Não. A IA apenas processa informações e reproduz padrões, não compreendendo verdadeiramente o significado das suas respostas.<span class="dilemma-percent" data-answer-percent="B" hidden></span><span class="dilemma-bar" data-answer-bar="B" hidden></span></span>
+						</label>
+						<label class="dilemma-option">
+							<input type="radio" name="dilemma-answer" value="C">
+							<span class="dilemma-option-copy"><strong>C)</strong> Depende. A IA pode compreender informações de uma forma diferente dos seres humanos, mesmo sem demonstrar consciência ou emoções.<span class="dilemma-percent" data-answer-percent="C" hidden></span><span class="dilemma-bar" data-answer-bar="C" hidden></span></span>
+						</label>
+						<label class="dilemma-option">
+							<input type="radio" name="dilemma-answer" value="D">
+							<span class="dilemma-option-copy"><strong>D)</strong> Não sabemos. Ainda não existem conhecimentos suficientes para determinar se uma IA consegue realmente pensar e compreender.<span class="dilemma-percent" data-answer-percent="D" hidden></span><span class="dilemma-bar" data-answer-bar="D" hidden></span></span>
+						</label>
+					</fieldset>
+					<button class="dilemma-confirm" id="dilemma-confirm" type="submit" disabled>Confirmar resposta</button>
+				</form>
+				<p class="dilemma-result" id="dilemma-result" role="status" hidden></p>
+			</div>
+		</div>
+	</dialog>
+	<header class="site-header">
+		<a class="logo" href="#inicio" aria-label="Meios de comunicação, início"><span class="logo-mark" aria-hidden="true">c.</span>Meios de comunicação</a>
+		<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menu">
+			<span></span><span></span><span></span>
+		</button>
+		<nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+			<a href="#meios">Os meios</a>
+			<a href="#historia">Linha do tempo</a>
+			<a href="#projeto">Sobre o projeto</a>
+			<a class="nav-button" href="#meios">Explorar <span aria-hidden="true">↗</span></a>
+		</nav>
+	</header>
+
+	<main id="conteudo">
+		<section class="hero section-wrap" id="inicio">
+			<div class="hero-content">
+				<p class="eyebrow">Um mundo conectado</p>
+				<h1>As muitas formas de <em>se comunicar.</em></h1>
+				<p class="hero-description">A comunicação faz parte de uma das capacidades cruciais num ser vivo. Muitas vezes, confunde-se comunicação com palavras, com a capacidade de saber falar, escrever, ler. Ao reduzirmos a definição de comunicar a algo tão simples, tão básico, tão restritivo, ignoramos as bases que permitiram a evolução e sobrevivência da nossa espécie.</p>
+				<div class="hero-actions">
+					<a class="button button-primary" href="#meios">Explore os meios</a>
+					<button class="text-link dilemma-open" id="dilemma-open" type="button">Dilema</button>
+				</div>
+				<p class="hero-caption"><span aria-hidden="true">✳</span> Comunicar é aproximar diferentes histórias.</p>
+			</div>
+			<div class="hero-image">
+				<img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85" alt="Pessoas reunidas conversando e compartilhando ideias" fetchpriority="high">
+				<div class="image-label"><strong>Comunicação é encontro.</strong><span>Ideias que aproximam pessoas.</span></div>
+			</div>
+		</section>
+
+		<section class="highlights section-wrap" aria-label="Destaques sobre comunicação">
+			<article class="highlight"><span class="highlight-icon" aria-hidden="true">◉</span><div><h2>Desde sempre</h2><p>A comunicação faz parte de nós</p></div></article>
+			<article class="highlight"><span class="highlight-icon" aria-hidden="true">⌁</span><div><h2>Muitas linguagens</h2><p>Palavras, imagens, sons e gestos</p></div></article>
+			<article class="highlight"><span class="highlight-icon" aria-hidden="true">◎</span><div><h2>Um mundo conectado</h2><p>Informação que circula e transforma</p></div></article>
+		</section>
+
+		<section class="content-section timeline-section section-wrap" id="historia">
+			<div class="section-heading">
+				<div><p class="eyebrow">Evolução ao longo do tempo</p><h2>Os meios de comunicação em poucas datas.</h2></div>
+				<p class="section-intro">Dos primeiros sinais à comunicação digital.</p>
+			</div>
+			<div class="timeline">
+				<article class="timeline-item"><a class="timeline-link" href="epoca.html?era=prehistoria"><span>PRÉ-HISTÓRIA</span><img class="timeline-image" loading="lazy" decoding="async" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Lascaux%2C_Megaloceros.jpg/500px-Lascaux%2C_Megaloceros.jpg" alt="Reprodução de uma pintura rupestre de um veado-gigante, inspirada nas grutas de Lascaux"><h3>Gestos e pinturas</h3><p>As pessoas comunicam por sinais e imagens.</p></a></article>
+				<article class="timeline-item"><a class="timeline-link" href="epoca.html?era=imprensa"><span>c. 1450</span><img class="timeline-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=500&q=80" alt="Livros impressos"><h3>Imprensa</h3><p>Livros e notícias começam a circular em maior escala.</p></a></article>
+				<article class="timeline-item"><a class="timeline-link" href="epoca.html?era=telefone"><span>1837–1876</span><img class="timeline-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Equipamento de comunicação"><h3>Telégrafo e telefone</h3><p>Mensagens e voz passam a viajar à distância.</p></a></article>
+				<article class="timeline-item"><a class="timeline-link" href="epoca.html?era=radio-tv"><span>1920–1950</span><img class="timeline-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=500&q=80" alt="Televisão numa sala"><h3>Rádio e televisão</h3><p>Som e imagem chegam a muitas casas.</p></a></article>
+				<article class="timeline-item"><a class="timeline-link" href="epoca.html?era=internet"><span>1969–1991</span><img class="timeline-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" alt="Circuito eletrónico"><h3>Internet e Web</h3><p>Computadores ligam pessoas e informação.</p></a></article>
+				<article class="timeline-item"><a class="timeline-link" href="epoca.html?era=atualidade"><span>HOJE</span><img class="timeline-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Telemóvel moderno"><h3>Telemóveis e redes</h3><p>A comunicação torna-se rápida e global.</p></a></article>
+			</div>
+		</section>
+
+		<section class="project-book-section section-wrap" aria-labelledby="project-book-title">
+			<div class="project-book-card">
+				<div class="project-book-content">
+					<p class="eyebrow">Projeto base</p>
+					<h2 id="project-book-title">CNM Magazine - Janeiro 2019</h2>
+					<p>Abre a revista em formato de livro digital e percorre as páginas sobre os meios de comunicação.</p>
+					<a class="button button-primary" href="projeto-base.html">Ver revista <span aria-hidden="true">↗</span></a>
+				</div>
+				<div class="project-book-art">
+					<button class="project-book-cover-button" id="project-book-cover-open" type="button" aria-label="Ver a capa da CNM Magazine em tamanho maior" disabled>
+						<canvas class="project-book-cover-preview" id="project-book-cover" aria-hidden="true"></canvas>
+					</button>
+					<span class="project-book-cover-fallback" id="project-book-cover-fallback" role="alert" hidden>Não foi possível carregar a capa.</span>
+				</div>
+			</div>
+			<div class="project-book-card">
+				<div class="project-book-content">
+					<p class="eyebrow">Projeto</p>
+					<h2 id="project-book-title-2">CNM Magazine 2.0</h2>
+					<p>Abre a revista em formato de livro digital e percorre as páginas sobre os meios de comunicação.</p>
+					<a class="button button-primary" href="Magazine%202.0.html">Ver revista <span aria-hidden="true">↗</span></a>
+				</div>
+				<div class="project-book-art" aria-hidden="true">
+					<div class="project-book-cover-blue"><span>PROJETO</span><strong>CNM Magazine<br>2.0</strong><small>REVISTA DIGITAL</small></div>
+				</div>
+			</div>
+			<dialog class="project-book-cover-dialog" id="project-book-cover-dialog" aria-label="Capa da CNM Magazine ampliada">
+				<button class="project-book-cover-close" id="project-book-cover-close" type="button">Fechar <span aria-hidden="true">×</span></button>
+				<img class="project-book-cover-large" id="project-book-cover-large" alt="Capa completa da CNM Magazine">
+			</dialog>
+		</section>
+
+		<section class="content-section section-wrap" id="meios">
+			<div class="section-heading">
+				<div><p class="eyebrow">Formas de compartilhar</p><h2>Quatro caminhos para a informação chegar até nós.</h2></div>
+				<p class="section-intro">Cada meio tem suas características e seu jeito de contar histórias. Juntos, eles moldam a maneira como vemos o mundo.</p>
+			</div>
+			<div class="media-grid">
+				<article class="media-card">
+					<span class="media-icon icon-paper" aria-hidden="true">▤</span>
+					<h3><a href="jornais-revistas.html">Jornal e revista</a></h3>
+					<p>Notícias, reportagens e ideias registadas em páginas impressas ou digitais.</p>
+					<details><summary>Saiba mais</summary><p>O formato impresso facilita a leitura sem ecrãs; a versão digital permite atualizar e partilhar notícias rapidamente.</p></details>
+					<a class="media-card-link" href="jornais-revistas.html">Explorar jornais e revistas <span aria-hidden="true">↗</span></a>
+				</article>
+				<article class="media-card">
+					<span class="media-icon icon-radio" aria-hidden="true">♫</span>
+					<h3><a href="radio-podcasts.html">Rádio e podcasts</a></h3>
+					<p>Vozes, músicas e histórias que nos acompanham onde quer que estejamos.</p>
+					<details><summary>Saiba mais</summary><p>O rádio transmite programas em direto; os podcasts podem ser ouvidos quando e onde quisermos.</p></details>
+					<a class="media-card-link" href="radio-podcasts.html">Explorar rádio e podcasts <span aria-hidden="true">↗</span></a>
+				</article>
+				<article class="media-card">
+					<span class="media-icon icon-tv" aria-hidden="true">▶</span>
+					<h3><a href="televisao-video.html">Televisão e vídeo</a></h3>
+					<p>Imagem e som unem-se para informar, emocionar e entreter milhões.</p>
+					<details><summary>Saiba mais</summary><p>A televisão reúne imagem e som numa emissão; o vídeo online permite escolher o que ver e quando.</p></details>
+					<a class="media-card-link" href="televisao-video.html">Explorar televisão e vídeo <span aria-hidden="true">↗</span></a>
+				</article>
+				<article class="media-card">
+					<span class="media-icon icon-internet" aria-hidden="true">⌘</span>
+					<h3><a href="internet.html">Internet</a></h3>
+					<p>Uma rede que conecta pessoas e permite trocar informação em tempo real.</p>
+					<details><summary>Saiba mais</summary><p>Na Internet, publicamos, pesquisamos e comunicamos através de serviços e dispositivos ligados em rede.</p></details>
+					<a class="media-card-link" href="internet.html">Explorar a Internet <span aria-hidden="true">↗</span></a>
+				</article>
+			</div>
+		</section>
+
+		<section class="feature section-wrap" id="projeto">
+			<div class="feature-image"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=85" alt="Câmara de vídeo usada na produção de conteúdo"></div>
+			<div class="feature-content">
+				<p class="eyebrow">Mais do que transmitir</p>
+				<h2>A comunicação também constrói pontes.</h2>
+				<p>Ela ajuda a compartilhar conhecimento, dar voz a diferentes grupos e aproximar culturas. Entender os meios é também entender como a sociedade se conecta.</p>
+				<a class="button button-light" href="#historia">Veja como tudo mudou <span aria-hidden="true">→</span></a>
+			</div>
+		</section>
+
+		<section class="quote section-wrap"><span class="quote-mark" aria-hidden="true">“</span><blockquote>A comunicação começa quando uma ideia encontra <em>outra pessoa.</em></blockquote><span class="quote-mark" aria-hidden="true">”</span></section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="footer-main section-wrap">
+			<div class="footer-about"><a class="logo footer-logo" href="#inicio"><span class="logo-mark">c.</span> conexões</a><p>Um projeto escolar sobre os meios de comunicação e as formas como aproximam o mundo.</p></div>
+			<div class="footer-links">
+				<div><h2>Explore</h2><a href="#meios">Os meios</a><a href="#historia">Linha do tempo</a><a href="#projeto">Sobre o tema</a></div>
+				<div><h2>O projeto</h2><a href="#inicio">Trabalho em grupo</a><a href="#meios">Aprender juntos</a><a href="#projeto">Comunicação</a></div>
+				<div><h2>Administração</h2><button class="admin-trigger" id="admin-open" type="button">Iniciar sessão <span aria-hidden="true">↗</span></button></div>
+			</div>
+		</div>
+		<div class="footer-bottom section-wrap"><span>© Projeto A+ — Grupo 3</span><span>11.º Ano</span></div>
+	</footer>
+	<dialog class="admin-dialog" id="admin-dialog" aria-labelledby="admin-title">
+		<div class="admin-dialog-header">
+			<div><p class="eyebrow">Área reservada</p><h2 id="admin-title">Administração do projeto</h2></div>
+			<button class="admin-close" id="admin-close" type="button" aria-label="Fechar">×</button>
+		</div>
+		<p class="admin-notice">Modo local: respostas e visitas continuam guardadas neste navegador depois de atualizar a página, mas não sincronizam entre dispositivos. A palavra-passe também fica guardada aqui como hash, não em texto no código. A contagem soma carregamentos de páginas, não pessoas únicas, e não é um acesso seguro para um site publicado.</p>
+		<div class="admin-login-view" id="admin-login-view">
+			<form class="admin-login-card" id="admin-login-form" aria-labelledby="admin-login-title">
+				<h3 id="admin-login-title">Iniciar sessão</h3>
+				<label for="admin-email">Conta autorizada</label>
+				<input id="admin-email" type="email" value="a2758@colegionovodamaia.pt" readonly>
+				<label for="admin-password">Palavra-passe</label>
+				<input id="admin-password" type="password" autocomplete="new-password" minlength="8" required>
+				<div id="admin-password-confirm-wrap">
+					<label for="admin-password-confirm">Confirmar palavra-passe</label>
+					<input id="admin-password-confirm" type="password" autocomplete="new-password" minlength="8" required>
+				</div>
+				<button class="admin-login-button" id="admin-login-submit" type="submit">Criar palavra-passe local</button>
+				<p id="admin-auth-status" role="status">Na primeira utilização, cria uma palavra-passe com pelo menos 8 caracteres.</p>
+			</form>
+		</div>
+		<section class="admin-dashboard-preview" id="admin-dashboard" aria-labelledby="admin-dashboard-title" hidden>
+				<div class="admin-dashboard-heading"><div><span class="admin-demo-badge">DADOS LOCAIS</span><h3 id="admin-dashboard-title">Resumo do site</h3></div><div class="admin-dashboard-actions"><button class="admin-export-button" id="admin-export" type="button">Descarregar respostas (CSV)</button><button class="admin-logout-button" id="admin-logout" type="button">Terminar sessão</button></div></div>
+				<div class="admin-stats">
+					<div><span>Respostas ao dilema</span><strong id="admin-response-count">0</strong></div>
+					<div><span>Visitas neste navegador</span><strong id="admin-visit-count">0</strong></div>
+				</div>
+				<div class="admin-answers" id="admin-answer-summary" aria-label="Distribuição das respostas do dilema">
+					<p>Resultados do dilema</p>
+					<div><span>Resposta A</span><strong data-admin-count="A">0 (0%)</strong></div>
+					<div><span>Resposta B</span><strong data-admin-count="B">0 (0%)</strong></div>
+					<div><span>Resposta C</span><strong data-admin-count="C">0 (0%)</strong></div>
+					<div><span>Resposta D</span><strong data-admin-count="D">0 (0%)</strong></div>
+				</div>
+				<div class="admin-response-list">
+					<h4>Respostas registadas neste navegador</h4>
+					<div class="admin-table-wrap">
+						<table><thead><tr><th>Identificador anónimo</th><th>Resposta</th><th>Data</th></tr></thead><tbody id="admin-response-rows"></tbody></table>
+					</div>
+					<p id="admin-empty-responses">Ainda não há respostas guardadas neste navegador.</p>
+				</div>
+		</section>
+	</dialog>
+</body>
+</html>
